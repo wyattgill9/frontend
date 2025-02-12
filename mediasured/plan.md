@@ -15,7 +15,7 @@ The system is built using a **microservices architecture**, where each service o
 - Subscription & plan management
 
 ### **2. Social Media Integration**  
-- Connects to **YouTube, Instagram, and TikTok APIs**
+- Connects to **Instagram, Facebook, YouTube and TikTok APIs**
 - Fetches **basic user data** (followers, engagement, recent posts)
 - Stores **raw metrics** in a database for analytics processing
 
@@ -26,10 +26,10 @@ The system is built using a **microservices architecture**, where each service o
 - Predictive analytics to forecast influencer growth
 
 ### **4. Influencer Insurance Service**  
-- Assesses influencer **risk levels** based on engagement metrics
+- Assesses influencer **Risk levels** based on engagement metrics
 - Offers **custom insurance plans** based on reach and credibility
 - Allows users to **request coverage estimates**
-- Implements a **basic risk assessment model** for claims processing
+- Implements a **Risk assessment model** for claims processing
 
 ### **5. API Gateway**  
 - **Centralized request routing** to backend microservices
@@ -37,9 +37,9 @@ The system is built using a **microservices architecture**, where each service o
 - Ensures a **single entry point** for frontend communication
 
 ### **6. (Optional) Notification Service**  
-- Sends **email & push notifications** for alerts (e.g., engagement drop)
+- Sends **Email & push notifications** for alerts (e.g., engagement drop)
 - Weekly **performance reports** sent to users
-- Uses **SMTP & Firebase Cloud Messaging (FCM)**
+- Uses **RESEND** - https://resend.com/
 
 ---
 
@@ -54,12 +54,16 @@ The system is built using a **microservices architecture**, where each service o
 ### **Backend Microservices**
 | Service  | Language | Framework | Database |
 |----------|---------|-----------|----------|
-| **Auth & User Management** | Go | Gin/Fiber | PostgreSQL |
-| **Social Media Integration** | Python | FastAPI | PostgreSQL/Redis |
-| **Analytics & Insights** | Python | FastAPI | ClickHouse/PostgreSQL |
-| **Influencer Insurance** | Go | Fiber | PostgreSQL |
-| **API Gateway** | Go | Kong API Gateway | - |
-| **Notification Service** | Node.js | NestJS | Redis/PostgreSQL |
+| **Auth & User Management** | Go | Gin | PostgreSQL/ |
+| **Social Media Integration** | Go | Gin | PostgreSQL/Redis |
+| **Analytics & Insights** | Go | Gin | ClickHouse/PostgreSQL |
+| **Influencer Insurance** | Go | Gin | PostgreSQL |
+
+## **Future**
+| Service  | Language | Framework | Database |
+|----------|---------|-----------|----------|
+| **API Gateway** | Go | TBD  | - |
+| **Notification Service** | TBD | TBD | TBD |
 
 ---
 
@@ -67,19 +71,23 @@ The system is built using a **microservices architecture**, where each service o
 - **Containerization:** Docker
 - **Orchestration:** Kubernetes (eventually, for scaling)
 - **CI/CD:** GitHub Actions
-- **Monitoring & Logging:** Prometheus, Grafana, Loki
-- **Hosting:** AWS/GCP with Nginx or Traefik for reverse proxy
+- **Monitoring & Logging:** Prometheus, Grafana
+- **Hosting:** AWS/GCP with *Nginx or Traefik for reverse proxy
 
 ---
 
-## **Development Roadmap**
-1. **Build Authentication Service (Go)**
-2. **Set up User Management & OAuth**
-3. **Develop Social Media Integration Service**
-4. **Create Analytics & Insights Dashboard**
-5. **Implement API Gateway for service communication**
-6. **Develop Influencer Insurance Module**
-7. **Optimize, Test, and Deploy MVP**
+## **MVP Development Roadmap**
+1. **Build Authentication Service (Go)** [-]
+2. **Set up User OAuth & Management (Go)** - Backend + Frontend [-]
+3. **Develop Social Media Integration Service** - Frontend [-]
+4. **Create Analytics & Insights Dashboard** - Frontend [-]
+5. **Create Analytics Agragation/Processing Service (TBD, Go? Something High Performance)** - Backend [-]
+6. **Develop Influencer Insurance Module** - Buisness Logic
+7. **Develop Payment Pages** - Frontent [-]
+8. **Develop Payment/Insurance Service (TBD, Go? or smt)** - Backend [-]
+9. **Implement API Gateway for service communication (TBD, smt)** - Backend [-]
+10. **Link Frontend and API Gateway** - Backend + Frontend [-] 
+11. **Optimize, Test, and Deploy MVP**
 
 ---
 
