@@ -87,7 +87,7 @@ const developerItems = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const closeTimeout = useRef<NodeJS.Timeout>()
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (dropdown: string) => {
     if (closeTimeout.current) {
